@@ -3,11 +3,11 @@
 
 int main() {
 
-  DDRB |= _BV(DDB4);
+  DDRB = 0x01<<4;
   while (1) {
-    PORTB |= _BV(PORTB4);
+    PORTB |= (0x01<<4);
     _delay_ms(1000);
-    PORTB &= ~_BV(PORTB4);
+    PORTB &= ~(0x01<<4);
     _delay_ms(1000);
   }
 }
